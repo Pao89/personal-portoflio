@@ -16,6 +16,7 @@
 
 html {
 	font-size: 16px;
+	scroll-behavior: smooth;
 }
 
 body {
@@ -35,8 +36,12 @@ a {
 }
 
 .container {
-	padding-left: 30px;
-	padding-right: 30px;
+	padding-left: 15px;
+	padding-right: 15px;
+	@media (width >= $breakpoint-md) {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
 }
 
 .section-header {
@@ -72,5 +77,24 @@ a {
 	.navbar-brand {
 		align-self: center;
 		margin-right: 0;
+	}
+}
+
+.back-top-link {
+	background: $overlay-background-color;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 0.7s ease-in-out;
+	border-radius: 50%;
+	&.shown {
+		visibility: visible;
+		opacity: 1;
+		position: fixed;
+		bottom: 5%;
+		right: 5%;
+		padding: 0.5rem;
+		.fa {
+			font-size: 1.2rem;
+		}
 	}
 }

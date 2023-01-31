@@ -21,3 +21,5 @@ export function animateOnWaypoint(selector, animation, offset, group = "default"
 		group: group,
 	});
 }
+
+export default $;

@@ -1,16 +1,18 @@
 import mojs from "@mojs/core";
 import * as utils from "./utils";
 import * as spinner from "./spinner";
-import { debounce } from "lodash";
+import { debounce, throttle } from "lodash";
 
 const isFirefox = typeof InstallTrigger !== "undefined";
 
+const navbar = $("#navbar");
 const heroWrapper = $(".hero-wrapper");
 const heroSections = $(".hero-column");
 const leftSection = $(".left-section");
 const mainHeadingLeft = $(".left-section .main-heading");
 const mainHeadingRight = $(".right-section .main-heading");
 const rightSection = $(".right-section");
+const backTopLink = $(".back-top-link");
 
 const bouncyCircle = new mojs.Shape({
 	parent: ".reveal-circle",
@@ -37,6 +39,14 @@ function checkPosition() {
 	} else {
 		heroSections.removeClass("desktop");
 		heroSections.removeAttr("style");
+	}
+}
+
+function updateBackTopButton() {
+	if ($(navbar).isInViewport()) {
+		backTopLink.removeClass("shown");
+	} else {
+		backTopLink.addClass("shown");
 	}
 }
 
@@ -128,6 +138,24 @@ function heroSectionAnimate(event, active = null) {
 $(window).on("resize", debounce(checkPosition, 100));
 
 $(".hero-intro").on("mouseover touchstart touchend", debounce(heroSectionAnimate, 20));
+
+$(window).on("scroll", debounce(updateBackTopButton, 1000));
+
+$('a[href^="#"]').on("click", function () {
+	var href = $.attr(this, "href");
+	if (href == "#") return;
+	$("html").animate(
+		{
+			scrollTop: $(href).offset().top,
+		},
+		50,
+		function () {
+			window.location.hash = href;
+		}
+	);
+
+	return false;
+});
 
 $(window).on("load", function () {
 	const secondCardTemplate = $("#second-card")[0].outerHTML;

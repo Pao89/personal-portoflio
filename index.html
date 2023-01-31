@@ -4,7 +4,7 @@
 		<!-- Required meta tags -->
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-		<title>Neon Glow - Bootstrap Theme</title>
+		<title>Paul - Web Developer</title>
 
 		<link rel="stylesheet" href="styles.scss" />
 		<script src="node_modules/jquery/dist/jquery.min.js"></script>
@@ -16,17 +16,16 @@
 				<div id="load-spinner"></div>
 			</div>
 			<div class="container">
-				<nav class="navbar navbar-default flex-nowrap" role="navigation">
+				<nav id="navbar" class="navbar navbar-default flex-nowrap" role="navigation">
 					<!-- Brand and toggle get grouped for better mobile display -->
-					<a class="nav-link" href="#"><i class="fa fa-suitcase" aria-hidden="true"></i><span>Work</span></a>
-					<a class="nav-link" href="#"><i class="fa fa-info" aria-hidden="true"></i><span>About</span></a>
-					<a id="logo" href="#" class="navbar-brand">EYE</a>
+					<a class="nav-link" href="#work"><i class="fa fa-suitcase" aria-hidden="true"></i><span>Work</span></a>
+					<a class="nav-link" href="#about"><i class="fa fa-info" aria-hidden="true"></i><span>About</span></a>
 					<a class="nav-link" href="#"><i class="fa fa-code" aria-hidden="true"></i><span>Projects</span></a>
 					<a class="nav-link" href="#" data-toggle="modal" data-target="#contact-modal"><i class="fa fa-envelope-o" aria-hidden="true"></i><span>Contact</span></a>
 				</nav>
 			</div>
 
-			<div class="hero-wrapper">
+			<div id="hero" class="hero-wrapper">
 				<div class="jumbotron-fluid bg-transparent mb-0 radius-0">
 					<div class="container-fluid hero-intro">
 						<div class="row">
@@ -56,7 +55,7 @@
 			</div>
 		</header>
 		<main>
-			<div class="work-wrapper">
+			<div id="work" class="work-wrapper">
 				<div class="container section work">
 					<div class="row justify-content-center">
 						<div class="d-flex justify-content-center flex-basis-100 section__section-heading animate__animated">
@@ -131,7 +130,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="about-wrapper">
+			<div id="about" class="about-wrapper">
 				<div class="container section about-me">
 					<div class="row justify-content-center">
 						<div class="d-flex justify-content-center flex-basis-100 section__section-heading animate__animated">
@@ -187,6 +186,7 @@
 				</div>
 			</div>
 		</main>
+		<a href="#navbar" class="back-top-link"><i class="fa fa-solid fa-arrow-up"></i></a>
 		<!-- Modal -->
 		<div class="modal fade" id="contact-modal" tabindex="-1" role="dialog" aria-labelledby="Contact Modal" aria-hidden="true">
 			<div class="modal-dialog modal-lg modal-dialog-centered" role="document">

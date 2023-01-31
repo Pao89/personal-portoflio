@@ -32,7 +32,16 @@
 			}
 		}
 		p {
-			font-size: 1.2rem;
+			@include rfs(1rem);
+			@media (300px <= width <= $breakpoint-sm) {
+				@include rfs(1.3rem);
+			}
+			@media (width >= $breakpoint-md) {
+				@include rfs(1.6rem);
+			}
+			@media (width >= $breakpoint-lg) {
+				@include rfs(1.7rem);
+			}
 			margin-top: 1rem;
 			line-height: 1.7;
 		}
