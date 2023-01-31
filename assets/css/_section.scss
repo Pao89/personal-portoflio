@@ -1,0 +1,136 @@
+.work-wrapper {
+	background-color: $section-work-bg-color;
+}
+
+.about-wrapper {
+	background-color: $section-about-bg-color;
+}
+
+.section {
+	padding-bottom: 5rem;
+	&__section-heading {
+		h1 {
+			font-size: 5rem;
+			font-weight: 500;
+			font-family: "Lora", serif;
+		}
+		margin: 1rem 0;
+	}
+	&.work {
+		.card-wrapper {
+			background: $section-heading-bg;
+			padding: 3px;
+			border-radius: 0.5rem;
+			margin-top: 1rem;
+			.card {
+				background-color: $section-work-bg-color;
+				display: flex;
+				flex-direction: column;
+				height: 25rem;
+				@media (width >= $breakpoint-lg) {
+					height: 30rem;
+				}
+				@media ($breakpoint-sm <= width <= $breakpoint-sm) {
+					height: 20rem;
+				}
+				.card-img-top {
+					flex-basis: 50%;
+				}
+				.card-body {
+					flex-basis: 50%;
+				}
+				.fa {
+					text-align: center;
+					@include work-card-img-size(12rem, 1rem 0 0 0);
+				}
+				/* .fa-database {
+					font-size: 11rem;
+					padding-bottom: 1rem;
+				} */
+				/* .fa-cart-shopping {
+					font-size: 12rem;
+					&::before {
+						padding-right: 1rem;
+					}
+				} */
+				/* .fa-code {
+					font-size: 10rem;
+					padding: 2rem;
+				} */
+				.card-title {
+					text-align: center;
+					@include rfs(2.7rem);
+					letter-spacing: 0.04rem;
+					font-weight: 700;
+				}
+				.card-text {
+					font-size: 1.3rem;
+					letter-spacing: 0.03rem;
+					word-spacing: -0.01rem;
+				}
+				.jquery-bg {
+					@include svg-bg($jQuery-svg, cover);
+				}
+				.php-bg {
+					@include svg-bg($php-svg, contain);
+					background-position: center;
+				}
+			}
+		}
+	}
+	&.about-me {
+		.card {
+			height: auto;
+			.card-text {
+				font-size: 1.1rem;
+				letter-spacing: 0.05rem;
+				line-height: 1.4;
+			}
+			.flip-click-wrapper {
+				text-align: end;
+				.flip-click {
+					padding: 1rem 0 0 1rem;
+					font-style: italic;
+				}
+			}
+		}
+		.picture-container {
+			position: relative;
+			display: grid;
+			grid-template-columns: 50% 50%;
+			grid-template-rows: 50% 50%;
+			.picture {
+				z-index: 2;
+				img {
+					max-width: 100%;
+					max-height: 100%;
+					object-fit: cover;
+				}
+			}
+			.reveal-circle {
+				position: absolute;
+				height: 25px;
+				width: 25px;
+				border-radius: 25px;
+				background-color: $section-about-reveal-circle-bg-color;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				z-index: 2;
+			}
+			.about-text-wrapper {
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				display: flex;
+				z-index: 1;
+				align-items: center;
+				p {
+					@include rfs(1.4rem);
+					letter-spacing: 0.05rem;
+					line-height: 1.6;
+				}
+			}
+		}
+	}
+}

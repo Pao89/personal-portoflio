@@ -1,0 +1,74 @@
+@import "assets/css/bootstrap4-neon-glow";
+@import "node_modules/font-awesome/css/font-awesome.css";
+@import "node_modules/animate.css/animate.min.css";
+@import "~rfs/scss";
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Lora&display=swap");
+@import "assets/css/variables";
+@import "assets/css/mixins";
+@import "assets/css/svg";
+@import "assets/css/loader";
+@import "assets/css/animations";
+@import "assets/css/hero";
+@import "assets/css/section";
+@import "assets/css/eye";
+
+html {
+	font-size: 16px;
+}
+
+body {
+	font-family: "Inter", sans-serif;
+}
+
+a {
+	color: white;
+}
+
+.flex-basis-100 {
+	flex-basis: 100%;
+}
+
+.flex-basis-50 {
+	flex-basis: 50%;
+}
+
+.container {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.section-header {
+	@include gradient-color-text($section-heading-bg);
+}
+
+.navbar {
+	min-width: 240px;
+	padding: 1rem 0;
+	.fa {
+		display: none;
+		height: 28px;
+		width: 28px;
+		background-color: #a0e9ff;
+		border-radius: 24px;
+		color: black;
+		font-size: 1.3rem;
+		@media (width <= $very-sm) {
+			display: flex;
+			align-content: center;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+	.nav-link {
+		padding: 0.5rem;
+		span {
+			@media (width <= $very-sm) {
+				display: none;
+			}
+		}
+	}
+	.navbar-brand {
+		align-self: center;
+		margin-right: 0;
+	}
+}

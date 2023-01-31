@@ -1,0 +1,31 @@
+@mixin svg-bg($bg, $size) {
+	background: $bg;
+	background-repeat: no-repeat;
+	background-size: $size;
+	height: 12rem;
+	width: 12rem;
+	margin: 20px auto 0px auto;
+}
+
+@mixin work-card-img-size($font-size: 12rem, $padding: 0) {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: $padding;
+	@media (width >= $breakpoint-lg) {
+		@include rfs($font-size);
+	}
+	@media ($breakpoint-sm <= width <= $breakpoint-lg) {
+		@include rfs($font-size + 2rem);
+	}
+	@media (width <= $breakpoint-sm) {
+		@include rfs($font-size + 8rem);
+	}
+}
+
+@mixin gradient-color-text($background) {
+	color: #fff;
+	-webkit-text-fill-color: transparent;
+	background: $background;
+	background-clip: text;
+} ;

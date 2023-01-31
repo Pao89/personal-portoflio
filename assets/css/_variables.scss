@@ -1,0 +1,145 @@
+$white: #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black: #000 !default;
+
+$grays: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$grays: map-merge(
+	(
+		"100": $gray-100,
+		"200": $gray-200,
+		"300": $gray-300,
+		"400": $gray-400,
+		"500": $gray-500,
+		"600": $gray-600,
+		"700": $gray-700,
+		"800": $gray-800,
+		"900": $gray-900,
+	),
+	$grays
+);
+
+$blue: #007bff !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: #e83e8c !default;
+$red: #ff3c5c !default;
+$orange: #f97515 !default;
+$yellow: #ffc107 !default;
+$green: #28a745 !default;
+$teal: #20c997 !default;
+$cyan: #17a2b8 !default;
+$gray: #1d1e2f !default;
+$darkblue: #0c0d16;
+$gray-dark: #11111d !default;
+$neon-primary: #714cdf !default;
+$neon-secondary: #16a4de !default;
+$neon-info: #2983fe !default;
+$neon-success: #17b06b !default;
+$neon-light: #dbebfb !default;
+$neon-dark: #32334a !default;
+
+$colors: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$colors: map-merge(
+	(
+		"blue": $blue,
+		"indigo": $indigo,
+		"purple": $purple,
+		"pink": $pink,
+		"red": $red,
+		"orange": $orange,
+		"yellow": $yellow,
+		"green": $green,
+		"teal": $teal,
+		"cyan": $cyan,
+		"white": $white,
+		"gray": $gray,
+		"gray-dark": $gray-dark,
+	),
+	$colors
+);
+
+$primary: $neon-primary !default;
+$secondary: $neon-secondary !default;
+$success: $neon-success !default;
+$info: $neon-info !default;
+$warning: $orange !default;
+$danger: $red !default;
+$light: $neon-light !default;
+$dark: $neon-dark !default;
+
+$theme-colors: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$theme-colors: map-merge(
+	(
+		"primary": $primary,
+		"secondary": $secondary,
+		"success": $success,
+		"info": $info,
+		"warning": $warning,
+		"danger": $danger,
+		"light": $light,
+		"dark": $dark,
+	),
+	$theme-colors
+);
+
+/* Variables */
+$very-sm: 460px;
+$hero-heading-bg: linear-gradient(271deg, #a0e9ff 30%, #a162e8 50%, #f093b0 70%, #edca85 94%);
+$section-heading-bg: linear-gradient(
+	100deg,
+	rgba(63, 92, 101, 1) 5%,
+	rgba(84, 136, 153, 1) 20%,
+	rgba(117, 179, 198, 1) 49%,
+	rgba(160, 233, 255, 1) 64%
+);
+
+$overlay-background-color: linear-gradient(
+	to right bottom,
+	#31315c,
+	#2c2c52,
+	#262648,
+	#21213e,
+	#1d1e38,
+	#1a1a31,
+	#16172b,
+	#141526,
+	#121320,
+	#0f101b,
+	#0c0d16
+);
+$body-background-color: $darkblue;
+
+$section-hero-bg-active: $body-background-color;
+$section-hero-bg-color: #17192c;
+$hero-section-bg-mobile: linear-gradient(90deg, $section-hero-bg-active 50%, $section-hero-bg-color 50%);
+$hero-section-bg-desk: linear-gradient(
+	180deg,
+	$section-hero-bg-active 50%,
+	$section-hero-bg-color 50%
+); /* 
+$hero-wrapper-bg-desk: linear-gradient(90deg, $section-hero-bg-color 50%, $section-hero-bg-active 50%);
+$hero-wrapper-bg-invert: linear-gradient(270deg, $section-hero-bg-color 50%, $section-hero-bg-active 50%); */
+
+$section-work-bg-color: #0e0e1a; //Lighter than hero
+
+$section-about-bg-color: $darkblue;
+$section-about-reveal-circle-bg-color: #16162b;
+
+$picture-container-translateY: -25%;
+
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;

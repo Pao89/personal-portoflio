@@ -1,0 +1,150 @@
+.hero-wrapper {
+	.hero-intro {
+		height: 650px;
+		@media (height >= 700px) {
+			height: 850px;
+		}
+		@media (height >= 1000px) {
+			height: 91vh;
+		}
+		h1,
+		h2 {
+			font-weight: 700;
+			letter-spacing: -2px;
+			font-family: "Lora", serif;
+		}
+		h1 {
+			@include rfs(6.3rem);
+			@media (width >= 992px) {
+				@include rfs(5.2rem);
+			}
+			@media (width >= 1200px) {
+				@include rfs(5.8rem);
+			}
+		}
+		h2 {
+			@include rfs(6rem);
+			@media (width >= 992px) {
+				@include rfs(4.8rem);
+			}
+			@media (width >= 1200px) {
+				@include rfs(5.4rem);
+			}
+		}
+		p {
+			font-size: 1.2rem;
+			margin-top: 1rem;
+			line-height: 1.7;
+		}
+		.row {
+			position: relative;
+			background-image: $hero-section-bg-mobile;
+			background-size: 100%, 100%;
+			margin: 1rem 0;
+			height: 100%;
+			.col-12 {
+				height: 50%;
+			}
+			@media (width >= $breakpoint-lg) {
+				background-image: $hero-section-bg-desk;
+				.col-lg-6 {
+					height: 100%;
+				}
+			}
+		}
+	}
+
+	.container-fluid {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.main-heading {
+		h1,
+		h2 {
+			@include gradient-color-text($hero-heading-bg);
+		}
+	}
+	.hero-column {
+		transition: all 0.7s ease-in-out;
+		.lead {
+			transition: all 0.5s ease-in-out;
+			opacity: 0;
+			transform: scale(0.8);
+		}
+		&.left-section {
+			.lead {
+				max-width: 600px;
+			}
+			display: flex;
+			.main-heading {
+				filter: grayscale(1);
+			}
+			&.active {
+				.main-heading {
+					filter: grayscale(0);
+				}
+			}
+		}
+		&.right-section {
+			display: flex;
+		}
+		&.active {
+			.lead {
+				opacity: 1;
+				transform: scale(1);
+			}
+		}
+	}
+
+	@media (width <= $breakpoint-lg) {
+		.hero-column {
+			&.left-section {
+				background-color: $section-hero-bg-color;
+				&.active {
+					background-color: $section-hero-bg-active;
+					border-bottom-right-radius: 40%;
+				}
+			}
+			&.right-section {
+				background-color: $section-hero-bg-color;
+
+				&.active {
+					background-color: $section-hero-bg-active;
+					border-top-right-radius: 40%;
+				}
+			}
+		}
+	}
+
+	@media (width >= $breakpoint-lg) {
+		.hero-column {
+			&.left-section {
+				background-color: $section-hero-bg-color;
+				&.active {
+					background-color: $section-hero-bg-active;
+					border-bottom-right-radius: 50%;
+				}
+			}
+			&.right-section {
+				background-color: $section-hero-bg-color;
+				.lead {
+					max-width: 700px;
+				}
+				&.active {
+					background-color: $section-hero-bg-active;
+					border-bottom-left-radius: 50%;
+				}
+			}
+		}
+	}
+
+	@media (width >= 1800px) {
+		.hero-column {
+			&.left-section {
+				.container {
+					transform: translateX(10%);
+				}
+			}
+		}
+	}
+}
