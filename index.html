@@ -22,7 +22,7 @@
 					<a class="nav-link" href="#"><i class="fa fa-info" aria-hidden="true"></i><span>About</span></a>
 					<a id="logo" href="#" class="navbar-brand">EYE</a>
 					<a class="nav-link" href="#"><i class="fa fa-code" aria-hidden="true"></i><span>Projects</span></a>
-					<a class="nav-link" href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i><span>Contact</span></a>
+					<a class="nav-link" href="#" data-toggle="modal" data-target="#contact-modal"><i class="fa fa-envelope-o" aria-hidden="true"></i><span>Contact</span></a>
 				</nav>
 			</div>
 
@@ -187,6 +187,41 @@
 				</div>
 			</div>
 		</main>
+		<!-- Modal -->
+		<div class="modal fade" id="contact-modal" tabindex="-1" role="dialog" aria-labelledby="Contact Modal" aria-hidden="true">
+			<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			  <div class="modal-content contact-modal__content">
+				<div class="modal-header contact-modal__title">
+				  <h5 class="modal-title " id="contact-modal-title">Let's have a chat</h5>
+				  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				  </button>
+				</div>
+				<div class="modal-body contact-modal__body">
+					<div class="container-fluid">
+						<form id="contact-form">
+							<div class="form-group row">
+								 <label for="emailField" class="col-sm-12 col-form-label">Email</label>
+								<div class="col-sm-6">
+									<input type="text" class="form-control" name="emailField" id="emailField" placeholder="Your Email">
+								</div>
+							</div>
+							<div class="form-group">
+							  <label for="messageField">Message</label>
+							  <textarea class="form-control" name="messageField" id="messageField" rows="3" placeholder="What do you wanna chat about"></textarea>
+							</div>
+							<div class="form-group row contact-buttons">
+								<div class="col-12 d-flex justify-content-end">
+									<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+									<button type="submit" class="btn btn-primary">Send</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			  </div>
+			</div>
+		  </div>
 		<script type="module" src="assets/js/vendors.js"></script>
 		<script src="https://kit.fontawesome.com/7f3b3594c1.js" crossorigin="anonymous"></script>
 		<script src="node_modules/justflipit/src/justFlipIt.js"></script>

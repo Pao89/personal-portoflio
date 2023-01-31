@@ -40,12 +40,12 @@ $cyan: #17a2b8 !default;
 $gray: #1d1e2f !default;
 $darkblue: #0c0d16;
 $gray-dark: #11111d !default;
-$neon-primary: #714cdf !default;
-$neon-secondary: #16a4de !default;
-$neon-info: #2983fe !default;
-$neon-success: #17b06b !default;
-$neon-light: #dbebfb !default;
-$neon-dark: #32334a !default;
+$neon-primary: #714cdf;
+$neon-secondary: #136c8f;
+$neon-info: #2983fe;
+$neon-success: #17b06b;
+$neon-light: #dbebfb;
+$neon-dark: #32334a;
 
 $colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -69,7 +69,7 @@ $colors: map-merge(
 );
 
 $primary: $neon-primary !default;
-$secondary: $neon-secondary !default;
+$secondary: $neon-secondary;
 $success: $neon-success !default;
 $info: $neon-info !default;
 $warning: $orange !default;
@@ -136,6 +136,23 @@ $section-work-bg-color: #0e0e1a; //Lighter than hero
 $section-about-bg-color: $darkblue;
 $section-about-reveal-circle-bg-color: #16162b;
 
+$contact-background-color: linear-gradient(
+	to right bottom,
+	#16162b,
+	#151629,
+	#141525,
+	#141423,
+	#131422,
+	#131321,
+	#121220,
+	#12121e,
+	#11111d,
+	#10101b,
+	#0f0f1a,
+	#0d0e18,
+	#0c0d16
+);
+$contact-text-color: $white;
 $picture-container-translateY: -25%;
 
 $breakpoint-xs: 0;

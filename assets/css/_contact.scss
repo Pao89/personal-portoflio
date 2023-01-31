@@ -1,0 +1,21 @@
+#contact-modal {
+	.contact-modal__content {
+		color: $contact-text-color;
+		background: $contact-background-color;
+		.contact-modal__title {
+			.close {
+				color: inherit;
+			}
+		}
+		.contact-modal__body {
+		}
+	}
+}
+
+#contact-form {
+	.contact-buttons {
+		.d-flex {
+			gap: 0.5rem;
+		}
+	}
+}
