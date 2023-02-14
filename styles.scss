@@ -2,12 +2,12 @@
 /* @import "node_modules/bootstrap/dist/css/bootstrap.min.css"; */
 @import "node_modules/font-awesome/css/font-awesome.css";
 @import "node_modules/animate.css/animate.min.css";
-@import "node_modules/rfs/scss.scss";
+@import "~rfs/scss";
 @import url("https://fonts.googleapis.com/css2?family=Inter&family=Lora&display=swap");
 @import "assets/css/variables";
 @import "assets/css/mixins";
 @import "assets/css/svg";
-@import "assets/css/loader"; //aka spinner
+@import "assets/css/loader";
 @import "assets/css/animations";
 @import "assets/css/hero";
 @import "assets/css/contact";
@@ -58,7 +58,7 @@ a {
 		background-color: #a0e9ff;
 		border-radius: 24px;
 		color: black;
-		font-size: 1.2rem;
+		font-size: 1.3rem;
 		@media (width <= $very-sm) {
 			display: flex;
 			align-content: center;

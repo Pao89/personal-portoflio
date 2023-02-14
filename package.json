@@ -2,17 +2,16 @@
 	"name": "personal-portfolio",
 	"version": "1.0.0",
 	"description": "",
+	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "parcel serve './index.html'",
-		"build": "parcel build './index.html' --public-url ."
+		"start": "parcel serve './index.html'"
 	},
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
 		"@mojs/core": "^1.4.0",
 		"@mojs/player": "^1.0.1",
-		"@octokit/core": "^4.2.0",
 		"@popperjs/core": "^2.11.6",
 		"animate.css": "^4.1.1",
 		"bootstrap": "^4.3.1",
@@ -28,7 +27,6 @@
 		"waypoints": "^4.0.1"
 	},
 	"devDependencies": {
-		"@parcel/transformer-sass": "^2.8.3",
-		"process": "^0.11.10"
+		"@parcel/transformer-sass": "^2.8.3"
 	}
 }

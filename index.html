@@ -20,8 +20,8 @@
 					<!-- Brand and toggle get grouped for better mobile display -->
 					<a class="nav-link" href="#work"><i class="fa fa-suitcase" aria-hidden="true"></i><span>Work</span></a>
 					<a class="nav-link" href="#about"><i class="fa fa-info" aria-hidden="true"></i><span>About</span></a>
-					<a class="nav-link" href="#projects"><i class="fa fa-github" aria-hidden="true"></i><span>Projects</span></a>
-					<a class="nav-link" href="#modal" data-toggle="modal" data-target="#contact-modal"><i class="fa fa-envelope-o" aria-hidden="true"></i><span>Contact</span></a>
+					<a class="nav-link" href="#"><i class="fa fa-code" aria-hidden="true"></i><span>Projects</span></a>
+					<a class="nav-link" href="#" data-toggle="modal" data-target="#contact-modal"><i class="fa fa-envelope-o" aria-hidden="true"></i><span>Contact</span></a>
 				</nav>
 			</div>
 
@@ -130,21 +130,6 @@
 					</div>
 				</div>
 			</div>
-            <div id="projects" class="projects-wrapper">
-                <div class="container section projects">
-                    <div class="row justify-content-center">
-                        <div class="d-flex justify-content-center flex-basis-100 section__section-heading animate__animated">
-							<h1 class="gradient-color section-header">Projects</h1>
-						</div>
-                        <div class="col-11 col-sm-10 col-lg-12">
-                            <div class="card animate__animated">
-                                <div class="list-group" id="repos-container">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 			<div id="about" class="about-wrapper">
 				<div class="container section about-me">
 					<div class="row justify-content-center">
@@ -215,9 +200,6 @@
 				<div class="modal-body contact-modal__body">
 					<div class="container-fluid">
 						<form id="contact-form">
-                            <div class="alert alert-info" role="alert">
-                                Contact form is temporarily disabled, contact me through <a href="https://www.linkedin.com/in/nicolae-paul-alexandrescu-882553171/" target="_blank">Linkedin</a> instead
-                              </div>
 							<div class="form-group row">
 								 <label for="emailField" class="col-sm-12 col-form-label">Email</label>
 								<div class="col-sm-6">
@@ -231,7 +213,7 @@
 							<div class="form-group row contact-buttons">
 								<div class="col-12 d-flex justify-content-end">
 									<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-									<button type="submit" disabled class="btn btn-primary">Send</button>
+									<button type="submit" class="btn btn-primary">Send</button>
 								</div>
 							</div>
 						</form>
@@ -240,10 +222,10 @@
 			  </div>
 			</div>
 		  </div>
-		<script type="module" src="assets/js/libs.js"></script>
+		<script type="module" src="assets/js/vendors.js"></script>
 		<script src="https://kit.fontawesome.com/7f3b3594c1.js" crossorigin="anonymous"></script>
 		<script src="node_modules/justflipit/src/justFlipIt.js"></script>
 		<script type="module" src="assets/js/utils.js"></script>
-		<script type="module" src="assets/js/index.js"></script>
+		<script type="module" src="assets/js/custom.js"></script>
 	</body>
 </html>
