@@ -13,6 +13,7 @@ const mainHeadingLeft = $(".left-section .main-heading");
 const mainHeadingRight = $(".right-section .main-heading");
 const rightSection = $(".right-section");
 const backTopLink = $(".back-top-link");
+const reposContainer = $("#repos-container");
 
 const bouncyCircle = new mojs.Shape({
 	parent: ".reveal-circle",
@@ -27,15 +28,10 @@ const bouncyCircle = new mojs.Shape({
 	repeat: 1000,
 }).play();
 
-let offsetForWaypoint;
-
 function checkPosition() {
 	if (window.matchMedia("(width >= 992px)").matches) {
 		heroSections.addClass("desktop");
 		heroSections.removeAttr("style");
-		offsetForWaypoint = function () {
-			return "100%";
-		};
 	} else {
 		heroSections.removeClass("desktop");
 		heroSections.removeAttr("style");
@@ -55,6 +51,7 @@ $(document).on("DOMContentLoaded", function () {
 	utils.animateOnWaypoint(".section__section-heading", "animate__fadeInUp", "100%");
 	utils.animateOnWaypoint(".about-mobile", "animate__fadeInUp", "100%");
 	utils.animateOnWaypoint(".picture-container", "animate__fadeInUp", "100%");
+	utils.animateOnWaypoint(".projects .card", "animate__fadeInUp", "100%");
 
 	$(".reveal-circle").on("mouseover", function () {
 		$(".picture-container").addClass("expanded");
@@ -117,22 +114,39 @@ function animateRightSection(isDesktop) {
 }
 
 function heroSectionAnimate(event, active = null) {
+	const closestMainHeading = active ? true : event.target.closest(".main-heading") || event.target.closest(".lead");
+	if (!closestMainHeading) return;
 	const activeSection = active ? active : event.target.closest(".hero-column");
 	if (activeSection == null) return;
-	//activeSection.addClass("active");
 	const isLeftSection = activeSection.classList.contains("left-section");
 	const isDesktop = activeSection.classList.contains("desktop");
 	activeSection.classList.add("active");
 	if (isLeftSection) {
 		animateLeftSection(isDesktop);
-		/* heroWrapper.addClass("bg-hero-left");
-		heroWrapper.removeClass("bg-hero-right"); */
 	}
 	if (!isLeftSection) {
 		animateRightSection(isDesktop);
-		/* heroWrapper.addClass("bg-hero-right");
-		heroWrapper.removeClass("bg-hero-left"); */
 	}
+}
+
+function handleFlipIt() {
+	const secondCardTemplate = $("#second-card")[0].outerHTML;
+	$("#second-card").detach();
+	$("#first-card").justFlipIt({ Template: secondCardTemplate, Click: ".flip-click" });
+}
+
+function parseRepoLanguages(languages) {
+	return languages
+		.map((language) => {
+			return `<span class="badge badge-primary badge-pill">${language}</span>`;
+		})
+		.join("");
+}
+
+function parseRepoLink(repo) {
+	return `<a href="${repo.url}" target="_blank" class="list-group-item list-group-item-action">${repo.name} <div>${parseRepoLanguages(
+		repo.languages
+	)}</div></a>`;
 }
 
 $(window).on("resize", debounce(checkPosition, 100));
@@ -153,16 +167,16 @@ $('a[href^="#"]').on("click", function () {
 			window.location.hash = href;
 		}
 	);
-
-	return false;
 });
 
-$(window).on("load", function () {
-	const secondCardTemplate = $("#second-card")[0].outerHTML;
-	$("#second-card").detach();
-	$("#first-card").justFlipIt({ Template: secondCardTemplate, Click: ".flip-click" });
-	console.log("window loaded");
+$(window).on("load", async function () {
+	window.scrollTo(0, 0);
+	handleFlipIt();
 	checkPosition();
+	const repos = await utils.getGitHubRepos();
+	repos.forEach((repo) => {
+		reposContainer.append(parseRepoLink(repo));
+	});
 	heroSectionAnimate(null, leftSection[0]);
 	spinner.stopSpinner();
 });
