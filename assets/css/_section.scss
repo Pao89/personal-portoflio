@@ -2,6 +2,10 @@
 	background-color: $section-work-bg-color;
 }
 
+.projects-wrapper {
+	background-color: $section-projects-bg-color;
+}
+
 .about-wrapper {
 	background-color: $section-about-bg-color;
 }
@@ -74,6 +78,32 @@
 				.php-bg {
 					@include svg-bg($php-svg, contain);
 					background-position: center;
+				}
+			}
+		}
+	}
+	&.projects {
+		h1 {
+			padding-bottom: 1rem;
+		}
+		.card {
+			box-shadow: 0 0 17px $section-hero-bg-active;
+			border-radius: 0.5rem;
+			border: none;
+			.list-group-item {
+				border-color: $section-hero-bg-active;
+				background-color: $section-hero-bg-color;
+				display: flex;
+				justify-content: space-between;
+				&:hover,
+				&:focus {
+					background-color: $section-hero-bg-active;
+				}
+				@media (width <= $breakpoint-sm) {
+					flex-wrap: wrap;
+					div {
+						flex-basis: 100%;
+					}
 				}
 			}
 		}
